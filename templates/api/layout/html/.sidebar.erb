@@ -1,0 +1,46 @@
+<% # NOTE: rename to sidebar.erb (remove leading ".") for this to take effect %>
+
+<div>
+  <h1>
+    <%= api_options['title'] %>
+    <%= api_options['version'] %>
+  </h1>
+
+  <h2 class="sidebar__heading">API</h2>
+
+  <nav id="static_pages">
+    <%=
+      sidebar_link(
+        'index.html',
+        api_options.readme_page_title,
+        options[:file] == api_options['readme']
+      )
+    %>
+
+    <% visible_static_pages.each do |page| %>
+      <%=
+        sidebar_link(page[:filename], page[:title], object == page[:filename])
+      %>
+    <% end %>
+  </nav>
+
+  <h2 class="sidebar__heading">Resources</h2>
+
+  <nav>
+    <% if api_options['resource_index'] %>
+      <%=
+        sidebar_link(
+          'all_resources.html',
+          'All Resources',
+          !!options[:all_resources]
+        )
+      %>
+    <% end %>
+
+    <% options[:resources].each do |resource, controllers| %>
+      <%=
+        sidebar_link(url_for(controllers[0]), resource.dup, resource == object)
+      %>
+    <% end %>
+  </nav>
+</div>

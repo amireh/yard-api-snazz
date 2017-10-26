@@ -1,0 +1,25 @@
+PATH
+  remote: .
+  specs:
+    yard-api-snazz (1.0.0)
+      yard (= 0.8.7)
+      yard-api
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    yard (0.8.7)
+    yard-api (0.3.6)
+      yard (= 0.8.7)
+      yard-appendix
+    yard-appendix (0.1.8)
+      yard (>= 0.8.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  yard-api-snazz!
+
+BUNDLED WITH
+   1.15.4

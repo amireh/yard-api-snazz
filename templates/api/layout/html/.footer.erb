@@ -1,0 +1,11 @@
+<% # NOTE: rename to footer.erb (remove leading ".") for this to take effect %>
+
+<div id="footer">
+  <p>
+    <%= api_options.footer_copyright.to_s %>
+
+    Generated on <%= Time.now.strftime("%c") %>
+  </p>
+
+  <%= api_options.footer_note.to_s %>
+</div>
